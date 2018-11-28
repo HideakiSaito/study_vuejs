@@ -16,10 +16,11 @@
 
   <a href="https://jp.vuejs.org/v2/guide/">https://jp.vuejs.org/v2/guide/</a>
 
+  <p>お客様　扱い</p>
   <div id="userDisp">
     <ol>
-      <li v-for="user in respect">
-            {{ user.name }}, {{ user.age }}
+      <li v-for="customer in customers">
+            {{ customer.name }}, {{ customer.age }}
       </li>
     </ol>
   </div>
@@ -27,8 +28,8 @@
   <div id="userDisp2">
     35才以下
       <ol>
-        <li v-for="user in ageLimit">
-              {{ user.name }}, {{ user.age }}
+        <li v-for="youth in youths">
+              {{ youth.name }}, {{ youth.age }}
         </li>
       </ol>
     </div>
