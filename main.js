@@ -1,4 +1,42 @@
 /**
+ * Mapとかfliterためす
+ */
+alert("hello ");
+
+var user1 = {name:"saitou",age:35};
+var user2 = {name:"kassai",age:23};
+var users = [user1,user2];
+
+/**
+ * まぷで敬称をつけて表でHTMLにレンダー
+ */
+var respect = users.map((users) =>
+  ({
+    name: users.name + "様",
+    age: users.age + "才"
+  })
+)
+
+var userDisp = new Vue({
+  el: '#userDisp',
+  data: {
+    respect
+  }
+})
+
+/**
+ * fileterで明るい職場だけ（ねんれい、。、、
+ */
+var ageLimit = users.filter(user => user.age <= 30)
+
+var userDisp2 = new Vue({
+  el: '#userDisp2',
+  data: {
+    ageLimit
+  }
+})
+
+/**
  * 
  */
 var app = new Vue({
@@ -25,7 +63,7 @@ var app2 = new Vue({
 var app3 = new Vue({
   el: '#app-3',
   data: {
-    seen: false,
+    seen: (2==1-1),
     out:true
   }
 })
@@ -39,7 +77,32 @@ var app4 = new Vue({
     todos: [
       { text: 'Learn JavaScript' },
       { text: 'Learn Vue' },
+      { text: 'Build something awesome' },
       { text: 'Build something awesome' }
+      
     ]
   }
 })
+
+/*
+ *json 
+*/
+
+var baseURL = "https://online.synvizs2.jp/S2_Dev_Service01/api/";
+var getURL = baseURL + "projects";
+
+axios.get(getURL)
+  .then(function (response) {
+    initVue(response.data)
+  }).catch(function (error) {
+    alert(error)
+  })
+
+  function initVue(info){
+    new Vue({
+            el: '#resjson',
+            data: {
+              infos: info
+            }
+        })
+  }

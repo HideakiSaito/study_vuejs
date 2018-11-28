@@ -16,6 +16,28 @@
 
   <a href="https://jp.vuejs.org/v2/guide/">https://jp.vuejs.org/v2/guide/</a>
 
+  <div id="userDisp">
+    <ol>
+      <li v-for="user in respect">
+            {{ user.name }}, {{ user.age }}
+      </li>
+    </ol>
+  </div>
+
+  <div id="userDisp2">
+    35才以下
+      <ol>
+        <li v-for="user in ageLimit">
+              {{ user.name }}, {{ user.age }}
+        </li>
+      </ol>
+    </div>
+  <table id="app">
+      <tr v-for="infom in info">
+        <td>{{ infom.ID }}</td>
+      </tr>
+  </table>
+
   <div id="app">
     {{ message }}
   </div>
@@ -28,8 +50,8 @@
   </div>
 
   <div id="app-3">
-    <span v-if="seen">Now you see me1</span>
-    <span v-if="out">Now you see me2</span>
+    <span v-if="seen">みせる</span>
+    <span v-if="out">あああ</span>
     <span v-if="seen">Now you see me3</span>
   </div>
 
