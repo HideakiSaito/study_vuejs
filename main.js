@@ -8,7 +8,7 @@ var user2 = {name:"kassai",age:23};
 var users = [user1,user2];
 
 /**
- * まぷで敬称をつけて表でHTMLにレンダー
+ * mapで敬称をつけて表でHTMLにレンダー
  */
 //お客様
 var customers = users.map((user) =>
