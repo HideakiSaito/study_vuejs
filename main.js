@@ -10,29 +10,31 @@ var users = [user1,user2];
 /**
  * まぷで敬称をつけて表でHTMLにレンダー
  */
-var respect = users.map((users) =>
+//お客様
+var customers = users.map((user) =>
   ({
-    name: users.name + "様",
-    age: users.age + "才"
+    name: user.name + "様",
+    age: user.age + "才"
   })
 )
 
 var userDisp = new Vue({
   el: '#userDisp',
   data: {
-    respect
+    customers
   }
 })
 
 /**
  * fileterで明るい職場だけ（ねんれい、。、、
  */
-var ageLimit = users.filter(user => user.age <= 30)
+//若者たち
+var youths = users.filter(user => user.age <= 30)
 
 var userDisp2 = new Vue({
   el: '#userDisp2',
   data: {
-    ageLimit
+    youths
   }
 })
 
