@@ -28,7 +28,7 @@ var userDisp = new Vue({
 /**
  * fileterで明るい職場だけ（ねんれい、。、、
  */
-//若者たち
+//若者たち・・・
 var youths = users.filter(user => user.age <= 30)
 
 var userDisp2 = new Vue({
