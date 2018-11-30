@@ -79,31 +79,53 @@ var app4 = new Vue({
       { text: 'Learn JavaScript' },
       { text: 'Learn Vue' },
       { text: 'Build something awesome' },
-      { text: 'Build something awesome' }
+      { text: 'this is a pen' }
       
     ]
   }
 })
 
-/*
- *json 
-*/
 
-var baseURL = "https://online.synvizs2.jp/S2_Dev_Service01/api/";
-var getURL = baseURL + "projects";
-
-axios.get(getURL)
-  .then(function (response) {
-    initVue(response.data)
-  }).catch(function (error) {
-    alert(error)
-  })
-
-  function initVue(info){
-    new Vue({
-            el: '#resjson',
-            data: {
-              infos: info
-            }
-        })
+/**
+ * 
+ */
+var app5 = new Vue({
+  el: '#app-5',
+  data: {
+    message: 'Hello Vue.js!',
+    members: 'Hideaki,Yuuta,Takuya,Abe'
+  },
+  methods: {
+    reverseMessage: function () {
+      this.message = this.message.split('').reverse().join('');
+      this.members = this.members.split(',').reverse().join()
+    }
   }
+})
+
+/**
+ * 
+ */
+var app6 = new Vue({
+  el: '#app-6',
+  data: {
+    message: 'Hello Vue!'
+  }
+})
+
+// todo-item と呼ばれる新しいコンポーネントを定義
+Vue.component('todo-item', {
+  props: ['todo'],
+  template: '<li>{{ todo.text }}</li>'
+})
+
+var app7 = new Vue({
+  el: '#app-7',
+  data: {
+    groceryList: [
+      { id: 0, text: 'red' },
+      { id: 1, text: 'blue' },
+      { id: 2, text: 'orange' }
+    ]
+  }
+})
