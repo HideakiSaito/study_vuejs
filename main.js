@@ -1,7 +1,6 @@
 /**
  * Mapとかfliterためす
  */
-alert("hello ");
 
 var user1 = {name:"saitou",age:35};
 var user2 = {name:"kassai",age:23};
