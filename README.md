@@ -13,3 +13,22 @@
 ## そのほか
 
 GitHubのプロジェクト機能でプロジェクト管理してみようかな
+
+GitLab も使うのでＰｌａｎｔＵＭＬの練習
+
+```plantuml
+@startuml
+
+actor Promoter
+actor Entrant
+
+Promoter --> (Create Event)
+Promoter -> (Attend Event)
+
+Entrant --> (Find Event)
+(Attend Event) <- Entrant
+
+(Attend Event) <.. (Create Member)  : <<include>>
+
+@enduml
+```
